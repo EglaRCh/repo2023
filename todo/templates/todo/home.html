@@ -1,0 +1,22 @@
+{% extends 'todo/layout.html' %}
+
+{% block content %}
+
+    <p>
+    <div class="d-grid gap-2 col-3 mx-auto">
+        <button><a href="{% url 'agregar' %}">Agregar</a></button>
+    </div>
+    </p>
+        <ul>
+        {% for tarea in tareas %}
+            <li>{{ tarea }}</li>
+            <button><a href="{% url 'eliminar' tarea.id %}">Eliminar</a></button>
+            <button><a href="{% url 'editar' tarea.id %}">Editar</a></button>
+            
+ 
+        {% endfor %}
+        </ul>
+
+{% endblock %}
+
+
